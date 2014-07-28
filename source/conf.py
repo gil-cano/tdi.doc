@@ -52,7 +52,7 @@ copyright = u'2014, Gildardo Bautista'
 # built documents.
 #
 # The short X.Y version.
-version = '1.0'
+version = '2015.1'
 # The full version, including alpha/beta/rc tags.
 release = '1.0'
 
@@ -105,7 +105,18 @@ html_theme = 'bootstrap'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    'navbar_site_name': "Site",
+    'navbar_links': [
+        ("Temario", "contents"),
+        ("Calendario", "calendar"),
+        ("Tareas", "assignments"),
+    ],
+    'navbar_sidebarrel': False,
+    'navbar_pagenav': False,
+    'navbar_class': "navbar navbar-inverse",
+    'source_link_position': "None",
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []

@@ -1,22 +1,25 @@
-.. Tecnologias para Desarrollos en Internet documentation master file, created by
-   sphinx-quickstart on Tue Jul 15 01:18:51 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _contents:
 
-Tecnologías para Desarrollos en Internet
-========================================
+Tecnologías para Desarrollos en Internet (2015-1)
+=================================================
 
-Contents:
+Objetivo general
+----------------
+
+Conocer y aplicar los conocimientos del balance entre conocimientos teóricos y tecnologías de aplicación para el desarrollo de aplicaciones en la Web.
+
 
 .. toctree::
    :maxdepth: 2
 
+   topics
 
+.. toctree::
+   :maxdepth: 2
 
-Indices and tables
-==================
+   calendar
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+   :maxdepth: 2
 
+   assignments
