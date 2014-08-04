@@ -45,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'TDI'
-copyright = u'2014, Gildardo Bautista'
+copyright = u'2014'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -108,7 +108,7 @@ html_theme = 'bootstrap'
 html_theme_options = {
     'navbar_site_name': "Site",
     'navbar_links': [
-        ("Temario", "contents"),
+        ("Temario", "syllabus"),
         ("Calendario", "calendar"),
         ("Tareas", "assignments"),
     ],

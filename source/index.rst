@@ -12,7 +12,7 @@ Conocer y aplicar los conocimientos del balance entre conocimientos teóricos y 
 .. toctree::
    :maxdepth: 2
 
-   topics
+   syllabus
 
 .. toctree::
    :maxdepth: 2
