@@ -14,6 +14,9 @@ Tecnologías de desarrollo
    :maxdepth: 3
 
    xhtml
+   javascript
+   python
+   flask
 
 
 Principios de diseño
