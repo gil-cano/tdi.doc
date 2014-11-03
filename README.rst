@@ -8,12 +8,13 @@ This repository es a work in progress
 Quick start
 -----------
 
-1. Clone and bootstrap
+1. Building the documentation locally
 
-   .. code:: bash
+    .. code:: bash
 
-      $ git clone git@github.com:gil-cano/tdi.doc.git
-      $ cd tdi.doc
-
-      $ python bootstrap.py
-      $ bin/buildout
+    $ git clone https://github.com/gil-cano/tdi.doc.git
+    $ cd tdi.doc
+    $ virtualenv-2.7 .
+    $ source bin/activate
+    $ pip install -r requirements.txt
+    $ make html
