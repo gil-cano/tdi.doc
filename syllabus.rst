@@ -23,6 +23,7 @@ Principios de diseño
    :maxdepth: 3
 
    design
+   yeoman
 
 
 Bibliografía complementaria

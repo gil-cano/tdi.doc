@@ -16,5 +16,5 @@ Quick start
     $ cd tdi.doc
     $ virtualenv-2.7 .
     $ source bin/activate
-    $ pip install -r requirements.txt
-    $ make html
+    (tdi.doc)$ pip install -r requirements.txt
+    (tdi.doc)$ make html

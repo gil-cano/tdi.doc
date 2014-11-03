@@ -23,3 +23,11 @@ Conocer y aplicar los conocimientos del balance entre conocimientos teóricos y 
    :maxdepth: 2
 
    assignments
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
