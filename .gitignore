@@ -14,6 +14,9 @@ parts/*
 develop-eggs
 .installed.cfg
 .mr.developer.cfg
+_build/
+include/
+lib
 
 .DS_Store
 
