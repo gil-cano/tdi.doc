@@ -10,7 +10,7 @@ Quick start
 
 1. Building the documentation locally
 
-    .. code:: bash
+.. code:: bash
 
     $ git clone https://github.com/gil-cano/tdi.doc.git
     $ cd tdi.doc
