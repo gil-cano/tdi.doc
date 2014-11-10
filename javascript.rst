@@ -254,11 +254,418 @@ En los tipos primitivos no se puede cambiar, agregar o eliminar propiedades.
 Objetos
 ~~~~~~~
 
+Los tipos mas comunes de objetos son:
 
+* Objetos simples
+
+.. code-block:: javascript
+
+    {
+        firstName: 'Eduardo',
+        lastName: 'Chavez'
+    }
+
+* Arreglos (los indices empiezan en 0)
+
+.. code-block:: javascript
+
+    ['manzana', 'platano', 'sandia']
+
+* Expresiones Regulares
+
+
+.. code-block:: javascript
+
+    /^a+b+$/
+
+Los objetos tienen las siguientes caracteristicas
+
+* Se comparan por referencia
+
+.. code-block:: javascript
+
+    > {} === {}  // two different empty objects
+    false
+
+    > var obj1 = {};
+    > var obj2 = obj1;
+    > obj1 === obj2
+    true
+
+* Modificables por default. Podemos cambiar, agregar y borrar propiedades
+
+.. code-block:: javascript
+
+    > var obj = {};
+    > obj.foo = 123; // add property `foo`
+    > obj.foo
+    123
+
+undefined y null
+~~~~~~~~~~~~~~~~
+
+`undefined` quiere decir "Sin valor". Variables no inicializadas son `undefined`
+
+.. code-block:: javascript
+
+    > var foo;
+    > foo
+    undefined
+
+Paramaetros omitidos son `undefined`
+
+.. code-block:: javascript
+
+    > function f(x) { return x }
+    > f()
+    undefined
+
+Si leemos una propiedad que no existe nos da un `undefined`
+
+.. code-block:: javascript
+
+    > var obj = {}; // empty object
+    > obj.foo
+    undefined
+
+`null` se refiere a que no existe el objeto.
+
+Las funciones te permiten indicar la falta de un valor con `undefined` o con `null`.
+
+.. code-block:: javascript
+
+    if (x === undefined || x === null) {
+        ...
+    }
+
+`undefined` y `null` se consideran `false`
+
+
+.. code-block:: javascript
+
+    if (!x) {
+        ...
+    }
+
+typeof e instanceof
+~~~~~~~~~~~~~~~~~~~
+
+`typeof` regresa una cadena describiendo el "tipo"
+
+.. code-block:: javascript
+
+    > typeof true
+    'boolean'
+    > typeof 'abc'
+    'string'
+    > typeof {} // objeto vacio
+    'object'
+    > typeof [] // arreglo vacio
+    'object'
+
+`typeof null` regresa `object`, estees un bug que no puede ser coregido, por que romperia codigo existente. Esto no quiere decir que `null` sea un objeto.
+
+
+`instanceof`
+
+.. code-block:: javascript
+
+    > var b = new Bar();  // object creado por el constructor Bar
+    > b instanceof Bar
+    true
+
+    > {} instanceof Object
+    true
+    > [] instanceof Array
+    true
+    > [] instanceof Object  // un arreglo es un objeto
+    true
+
+    > undefined instanceof Object
+    false
+    > null instanceof Object
+    false
+
+Booleanos
+~~~~~~~~~
+
+El tipo primitivo `boolean` usa los valores `true` y `false`.
+
+Los siguientes operadores producen booleanos:
+
+* operadores logicos: && (And), || (Or)
+
+* operadores logicos de prefijo: !(Not)
+
+* operadores de comparación:
+
+    * de igualdad: ===, !==, ==, !=
+
+    * operadores de orden: >, >=, <, <=
+
+Los siguientes valores se interpretan como falsos:
+
+* undefined, null
+
+* Boolean: false
+
+* Number: -0, NaN
+
+* String: ''
+
+La función Boolean convierte su parametro a un booleano.
+
+.. code-block:: javascript
+
+    > Boolean(undefined)
+    false
+    > Boolean(0)
+    false
+    > Boolean(3)
+    true
+    > Boolean({}) // objeto vacio
+    true
+    > Boolean([]) // objeto vacio
+    true
+
+Los operadores logicos son de corto-circuito:
+
+.. code-block:: javascript
+
+    > NaN && 'abc'
+    NaN
+    > 123 && 'abc'
+    'abc'
+
+    > 'abc' || 123
+    'abc'
+    > '' || 123
+    123
+
+Números
+~~~~~~~
+
+Todos los números son flotantes
+
+.. code-block:: javascript
+
+    > 1 === 1.0
+    true
+
+Tenemos el número 'NaN' (not a number)
+
+.. code-block:: javascript
+
+    > Number('xyz')  // 'xyz' no puede ser convertida a número
+    NaN
+
+
+Infinity:
+
+.. code-block:: javascript
+
+    > 3 / 0
+    Infinity
+    > Math.pow(2, 1024)  // número muy grande
+    Infinity
+
+
+Operadores aritmeticos:
+
+* Suma: n1 + n2
+
+* Resta: n1 - n2
+
+* Multiplicación: n1 * n2
+
+* División: n1 / n2
+
+* Residuo: n1 % n2
+
+* Incremento: ++variable, variable++
+
+* Decremento: --variable, variable--
+
+* Negativos: -valor
+
+* Comvierte a número: +valor
+
+
+Cadenas
+~~~~~~~
+
+.. code-block:: javascript
+
+    'abc'
+    "abc"
+
+    'Did she say "Hello"?'
+    "Did she say \"Hello\"?"
+
+    'That\'s nice!'
+    "That's nice!"
+
+    'Line 1\nLine 2'  // salto de linea
+    'Backlash: \\'
+
+
+.. code-block:: javascript
+
+    > var str = 'abc';
+    > str[1]
+    'b'
+
+.. code-block:: javascript
+
+    > 'abc'.length
+    3
+
+Las cadenas on inmutables.
+
+Concatenación:
+
+.. code-block:: javascript
+
+    > var messageCount = 3;
+    > 'You have ' + messageCount + ' messages'
+    'You have 3 messages'
+
+    > var str = '';
+    > str += 'Multiple ';
+    > str += 'pieces ';
+    > str += 'are concatenated.';
+    > str
+    'Multiple pieces are concatenated.'
+
+
+Metodos de cadenas:
+
+.. code-block:: javascript
+
+    > 'abc'.slice(1)  // copia una cadena
+    'bc'
+    > 'abc'.slice(1, 2)
+    'b'
+
+    > '\t xyz  '.trim()  // elimina espacios en blanco
+    'xyz'
+
+    > 'mjölnir'.toUpperCase()
+    'MJÖLNIR'
+
+    > 'abc'.indexOf('b')  // encuentra una cadena
+    1
+    > 'abc'.indexOf('x')
+    -1
+
+Condicionales
+~~~~~~~~~~~~~
+
+La sentencia `if` tiene una clausula `then` y una opcional `else`.
+
+.. code-block:: javascript
+
+    if (myvar === 0) {
+        // then
+    }
+
+    if (myvar === 0) {
+        // then
+    } else {
+        // else
+    }
+
+    if (myvar === 0) {
+        // then
+    } else if (myvar === 1) {
+        // else-if
+    } else if (myvar === 2) {
+        // else-if
+    } else {
+        // else
+    }
+
+    if (x < 0) return -x;
+
+
+.. code-block:: javascript
+
+    switch (fruit) {
+        case 'banana':
+            // ...
+            break;
+        case 'apple':
+            // ...
+            break;
+        default:  // los demas casos
+            // ...
+    }
+
+El operador despues del `case` puede ser cualquier expresión: Se compara via ===
+con el parametro del `switch`
+
+
+Ciclos
+~~~~~~
+
+.. code-block:: javascript
+
+    for (var i=0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+
+.. code-block:: javascript
+
+    var i = 0;
+    while (i < arr.length) {
+        console.log(arr[i]);
+        i++;
+    }
+
+.. code-block:: javascript
+
+    do {
+        // ...
+    } while (condition);
+
+
+* `brake` sale del ciclo
+
+* `continue` comienza una nueva iteración
 
 
 Funciones
 ~~~~~~~~~
+
+.. code-block:: javascript
+
+    function add(param1, param2) {
+        return param1 + param2;
+    }
+
+.. code-block:: javascript
+
+    > add(6, 1)
+    7
+    > add('a', 'b')
+    'ab'
+
+Otra manera de definir la funcion es:
+
+.. code-block:: javascript
+
+    var add = function (param1, param2) {
+        return param1 + param2;
+    };
+
+
+Una funcion de espresión produce un valor y puede ser usado para pasar directamente funciones como argumentos a otras funciones:
+
+
+.. code-block:: javascript
+
+    someOtherFunction(function (p1, p2) { ... });
+
 
 Arreglos
 ~~~~~~~~
