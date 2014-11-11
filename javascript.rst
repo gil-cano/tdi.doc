@@ -689,6 +689,18 @@ La asignacion de variables no lo es
         };
     }
 
+La vsariable especial `arguments`
+
+.. code-block:: javascript
+
+    > function f() { return arguments }
+    > var args = f('a', 'b', 'c');
+    > args.length
+    3
+    > args[0]  // read element at index 0
+    'a'
+
+
 Agregar JavaScript a HTML
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
