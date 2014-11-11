@@ -667,6 +667,146 @@ Una funcion de espresión produce un valor y puede ser usado para pasar directam
     someOtherFunction(function (p1, p2) { ... });
 
 
+La declaración de funciones es movida al inicio del "bloque" actual:
+
+.. code-block:: javascript
+
+    function foo() {
+        bar();  // OK
+        function bar() {
+            ...
+        }
+    }
+
+La asignacion de variables no lo es
+
+.. code-block:: javascript
+
+    function foo() {
+        bar();  // Not OK, bar is still undefined
+        var bar = function () {
+            // ...
+        };
+    }
+
+Agregar JavaScript a HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+n between the <body> tags add a button like this:
+
+.. code-block:: html
+
+    <button onclick="sayHello('world')">Enviar</button>
+
+*Linking to the JavaScript File*
+
+When you click on the "Click Me" button, nothing happens yet but we want to make it so that clicking on this button will trigger a JavaScript function called sayHello.
+
+In between the <head> tags add start and ending script tags like: <script></script>
+
+Now add the attribute to <script> called type like type="text/javascript". This tells the web browser that the script we are linking to is JavaScript.
+
+Lastly tell the browser where the JavaScript file is by adding a source attribute which looks like src="script.js". This is the directory path of the script.js file. For this exercise, our script is in the same directory as the html file so we just need to put the name of the file inside the src attribute.
+
+.. code-block:: html
+
+    <head>
+        <script type="text/javascript" src="script.js"/>
+    </head>
+
+*Say Hello with JavaScript*
+
+Now we have a script in place. Let's add the sayHello function to it.
+
+In the Functions with JavaScript course you learned about variables in functions.
+
+Our sayHello function has one parameter and its code will be a simple alert that will produce a pop-up when you click on the "Click Me" button. An alert can be used to display immediate messages in the web browser.
+
+In this exercise the parameter will be sent by the onClick event inside the parenthesis like onclick="sayHello('world').
+
+JavaScript events are actions that can be detected by JavaScript. onclick is an example of an event. Here's a list of other events.
+
+.. code-block:: javascript
+
+    function sayHello() {
+
+    }
+
+*Writing to the Page*
+
+When HTML is rendered in a browser, the browser stores the mark-up in the DOM (Document Object Model). JavaScript can be used to change or add to the HTML that is in the DOM.
+
+.. code-block:: javascript
+
+    function sayHello(name) {
+        alert ("Hello " + name);
+    }
+
+.. code-block:: html
+
+    <html>
+    <head>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body>
+
+    <button onclick="sayHello('world')">Click Me</button>
+
+    </body>
+
+    </html>
+
+
+In the HTML tab, below the <button> code, add start and ending <div> tags.
+
+Add an attribute to the <div> as id="result".
+
+In the JavaScript tab, inside the sayHello function, replace the alert code with: document.getElementById("result").innerHTML = 'Hello ' + name + '!';
+
+Click on the result tab, click on the "Click Me" button and see that your hello message is now displayed below the button!
+
+.. code-block:: html
+
+    <html>
+    <head>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body>
+
+    <button onclick="sayHello('world')">Click Me</button>
+    <div id="result"></div>
+    </body>
+
+    </html>
+
+
+.. code-block:: javascript
+
+    function sayHello(name){
+        document.getElementById("result").innerHTML = 'Hello ' + name + '!';
+    }
+
+
+*Adding More Values and More DIVS*
+
+In the previous exercise we wrote to one <div>. In this exercise, let's add another one and let's also add another parameter to your sayHello function.
+
+
+In the JavaScript tab, in the sayHello function, add another parameter called name2. Add a comma between the parameters.
+
+Now that the sayHello function expects two parameters. Add a second value to the onClick event in the HTML. This can be any word you'd like.
+
+While on the HTML tab, add a second <div> with an id attribute of result2. Now you have a <div> for each value that will be submitted to the function.
+
+In the JavaScript tab, add a second line of code that writes the parameter name2 and uses the result2 id.
+
+When you click on "Click Me" in the Results tab, you should see the values submitted in the onClick are printing to the DOM in their own <div>s just as you specified. Nice job!
+
+
+
 Arreglos
 ~~~~~~~~
 
@@ -689,3 +829,7 @@ Your mission, should you choose to accept it...
     .. code-block:: python
 
         from plone import api
+
+
+
+http://www.codecademy.com/courses/html-javascript-css/0/4
