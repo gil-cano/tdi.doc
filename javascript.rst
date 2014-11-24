@@ -845,3 +845,4 @@ Your mission, should you choose to accept it...
 
 
 http://www.codecademy.com/courses/html-javascript-css/0/4
+https://speakerdeck.com/ariya/javascript-and-the-browser-under-the-hood
