@@ -766,34 +766,14 @@ JavaScript events are actions that can be detected by JavaScript. onclick is an 
 .. code-block:: javascript
 
     function sayHello(name) {
-        alert ("Hello " + name);
+        alert("Hello " + name);
     }
 
 *Writing to the Page*
 
+Cuando un documento HTML es desplegado en el navegador
+
 When HTML is rendered in a browser, the browser stores the mark-up in the DOM (Document Object Model). JavaScript can be used to change or add to the HTML that is in the DOM.
-
-.. code-block:: javascript
-
-    function sayHello(name) {
-        alert ("Hello " + name);
-    }
-
-.. code-block:: html
-
-    <html>
-    <head>
-        <script type="text/javascript" src="script.js"></script>
-    </head>
-
-    <body>
-
-    <button onclick="sayHello('world')">Click Me</button>
-
-    </body>
-
-    </html>
-
 
 In the HTML tab, below the <button> code, add start and ending <div> tags.
 
@@ -811,9 +791,8 @@ Click on the result tab, click on the "Click Me" button and see that your hello 
     </head>
 
     <body>
-
-    <button onclick="sayHello('world')">Click Me</button>
-    <div id="result"></div>
+        <button onclick="sayHello('world')">Click Me</button>
+        <div id="result"></div>
     </body>
 
     </html>
@@ -841,7 +820,56 @@ In the JavaScript tab, add a second line of code that writes the parameter name2
 
 When you click on "Click Me" in the Results tab, you should see the values submitted in the onClick are printing to the DOM in their own <div>s just as you specified. Nice job!
 
+.. code-block:: html
 
+    <div class="hero-unit">
+      <form></form>
+    </div>
+
+.. code-block:: html
+
+    <form name="travelForm">
+        <label>First Name:</label>
+        <input type="text" name="firstname" />
+    </form>
+
+
+.. code-block:: html
+
+    <label>Last Name:</label>
+    <input type="text" name="lastname" />
+
+
+.. code-block:: html
+
+    <select name="destination">
+        <option value="Acapulco">Acapulco</option>
+        <option value="Oaxaca" selected>Oaxaca</option>
+    </select>
+
+.. code-block:: html
+
+    <input type="button" value="Reservar" onClick="processTravelForm()">
+
+.. code-block:: html
+
+    <div id="travelerInfo"></div>
+
+.. code-block:: javascript
+
+    function processTravelForm() {
+        var firstName = document.travelForm.firstname.value;
+    }
+
+.. code-block:: javascript
+
+    function processTravelForm() {
+        var firstName = document.travelForm.firstname.value;
+        var lastName = document.travelForm.lastname.value;
+        var destination = document.travelForm.destination.value;
+        var travelerInfo = '<div>First Name: ' + firstName + '</div>';
+        document.getElementById("travelerInfo").innerHTML += travelerInfo;
+    }
 
 Arreglos
 ~~~~~~~~
