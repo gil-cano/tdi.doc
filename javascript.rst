@@ -704,22 +704,46 @@ La vsariable especial `arguments`
 Agregar JavaScript a HTML
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Creamos  un proyecto con Yeoman
 
-n between the <body> tags add a button like this:
+.. code-block:: bash
+
+    $ mkdir yo-javascript
+    $ cd yo-javascript/
+    $ yo webapp
+
+         _-----_
+        |       |    .--------------------------.
+        |--(o)--|    |    Welcome to Yeoman,    |
+       `---------´   |   ladies and gentlemen!  |
+        ( _´U`_ )    '--------------------------'
+        /___A___\
+         |  ~  |
+       __'.___.'__
+     ´   `  |° ´ Y `
+
+    Out of the box I include HTML5 Boilerplate, jQuery, and a Gruntfile.js to build your app.
+    ? What more would you like?
+    ❯◯ Bootstrap
+     ◯ Sass
+     ◯ Modernizr
+
+    $ grunt serve
+
+
+Entre el tag <body> agregamos un botón:
 
 .. code-block:: html
 
-    <button onclick="sayHello('world')">Enviar</button>
+    <div class="hero-unit">
+      <button onclick="sayHello('world')">Enviar</button>
+    </div>
 
-*Linking to the JavaScript File*
+*Liga al archivo de JavaScript*
 
-When you click on the "Click Me" button, nothing happens yet but we want to make it so that clicking on this button will trigger a JavaScript function called sayHello.
-
-In between the <head> tags add start and ending script tags like: <script></script>
-
-Now add the attribute to <script> called type like type="text/javascript". This tells the web browser that the script we are linking to is JavaScript.
-
-Lastly tell the browser where the JavaScript file is by adding a source attribute which looks like src="script.js". This is the directory path of the script.js file. For this exercise, our script is in the same directory as the html file so we just need to put the name of the file inside the src attribute.
+Entre el tag <head> agregamos un tag de script.
+Agregamos el atributo type="text/javascript". Esto le indica al navegador que el script es un JavaScript.
+Por ultimo le indicamos en donde esta el archivo con el atributo rc="script.js"
 
 .. code-block:: html
 
@@ -741,8 +765,8 @@ JavaScript events are actions that can be detected by JavaScript. onclick is an 
 
 .. code-block:: javascript
 
-    function sayHello() {
-
+    function sayHello(name) {
+        alert ("Hello " + name);
     }
 
 *Writing to the Page*
