@@ -17,6 +17,7 @@ Tecnologías de desarrollo
    javascript
    python
    flask
+   node
 
 
 Principios de diseño
