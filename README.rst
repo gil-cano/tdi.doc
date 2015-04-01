@@ -1,7 +1,7 @@
 TDI - buildout
 ==============
 
-This repository es a work in progress
+This repository is a work in progress
 
 .. contents:: :local:
 
