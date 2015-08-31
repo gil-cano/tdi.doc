@@ -1,6 +1,6 @@
 .. _contents:
 
-Tecnologías para Desarrollos en Internet (2015-1)
+Tecnologías para Desarrollos en Internet (2016-1)
 =================================================
 
 Objetivo general
@@ -14,10 +14,6 @@ Conocer y aplicar los conocimientos del balance entre conocimientos teóricos y 
 
    syllabus
 
-.. toctree::
-   :maxdepth: 2
-
-   calendar
 
 .. toctree::
    :maxdepth: 2

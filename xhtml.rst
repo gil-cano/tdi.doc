@@ -1,7 +1,7 @@
-XHTML
+HTML
 -----
 
-Sintaxis y Semántica de XHTML
+Sintaxis y Semántica de HTML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Elementos funtamentales de HTML

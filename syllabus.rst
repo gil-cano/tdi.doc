@@ -15,9 +15,6 @@ Tecnologías de desarrollo
 
    xhtml
    javascript
-   python
-   flask
-   node
 
 
 Principios de diseño
@@ -27,7 +24,6 @@ Principios de diseño
    :maxdepth: 3
 
    design
-   yeoman
 
 
 Bibliografía complementaria
@@ -35,6 +31,5 @@ Bibliografía complementaria
 1. Jeffrey C. Jackson, Web Technologies A Computer Science Perspective, Pearson, 2007.
 2. Ilya Grigorik, High Performance Browser Networking, O'Reilly, 2013.
 3. Douglas Crockford, JavaScript The Good Parts, O'Reilly, 2008.
-4. Miguel Grinberg, Flask Web Development, O'Reilly, 2014.
-5. Tim Kadlec, Implementing Responsive Desing, New Riders, 2013.
+4. Tim Kadlec, Implementing Responsive Desing, New Riders, 2013.
 6. Múltiples páginas disponibles en la Web.
