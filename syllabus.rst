@@ -4,14 +4,14 @@ Temario
 Fundamentos
 -----------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    web_essentials
 
 Tecnologías de desarrollo
 -------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    html/HTML5
    css/css
@@ -22,7 +22,7 @@ Principios de diseño
 --------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    design
 
