@@ -13,7 +13,8 @@ Tecnologías de desarrollo
 .. toctree::
    :maxdepth: 3
 
-   xhtml
+   html/HTML5
+   css/css
    javascript
 
 
