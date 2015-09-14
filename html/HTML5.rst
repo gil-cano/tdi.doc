@@ -135,7 +135,7 @@ Elementos de Bloque
         </ul>
 
 
-Elementos en Linea
+Elementos de Linea
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: html
@@ -152,6 +152,82 @@ Elementos en Linea
 
         <b>John Hopcroft</b>, <em>IBM</em> Professor of Engineering and Applied Mathematics,
         <a href="https://www.cornell.edu/">Cornell University</a>
+
+
+<div>
+~~~~~
+
+El elemento *<div>* agrupa un conjunto de elementos en bloque.
+
+.. code-block:: html
+   :linenos:
+
+    <div>
+        <h1>John Hopcroft</h1>
+        <p>Las fechas de las platicas son:</p>
+        <ul>
+            <li>Lunes 10 de Agosto, 12:00 horas</li>
+            <li>Martes 11 de Agosto, 13:00 horas</li>
+        </ul>
+    </div>
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. raw:: html
+
+        <div>
+            <h1>John Hopcroft</h1>
+            <p>Las fechas de las platicas son:</p>
+            <ul>
+                <li>Lunes 10 de Agosto, 12:00 horas</li>
+                <li>Martes 11 de Agosto, 13:00 horas</li>
+            </ul>
+        </div>
+
+<span>
+~~~~~~
+
+.. code-block:: html
+   :linenos:
+
+    John Hopcroft, IBM Professor of Engineering and <span>Applied Mathematics</span>,
+    Cornell University
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. raw:: html
+
+      John Hopcroft, IBM Professor of Engineering and <span>Applied Mathematics</span>,
+      Cornell University
+
+
+<iframe>
+~~~~~~~~
+
+.. code-block:: html
+   :linenos:
+
+      <iframe
+        width="450"
+        height="350"
+        src="http://maps.google.co.uk/maps?q=moma+new+york&amp;output=embed">
+      </iframe>
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. raw:: html
+
+        <iframe
+          width="450"
+          height="350"
+          src="http://maps.google.co.uk/maps?q=moma+new+york&amp;output=embed">
+        </iframe>
 
 
 Elementos de HTML5
@@ -195,12 +271,16 @@ Se usa para contenido que esta relacionado con el  contenido
      <figcaption>Logo de la Facultad de Ciencias de la UNAM</figcaption>
    </figure>
 
-.. raw:: html
 
-   <figure>
-     <img src="img/fciencias.jpg" alt="Facultad de Ciencias" />
-     <figcaption>Logo de la Facultad de Ciencias de la UNAM</figcaption>
-   </figure>
+..  admonition:: Resultado
+    :class: toggle
+
+    .. raw:: html
+
+       <figure>
+         <img src="img/fciencias.jpg" alt="Facultad de Ciencias" />
+         <figcaption>Logo de la Facultad de Ciencias de la UNAM</figcaption>
+       </figure>
 
 
 <details> y <summary>
@@ -216,13 +296,16 @@ Se usa para contenido que esta relacionado con el  contenido
    </details>
 
 
-.. raw:: html
+..  admonition:: Resultado
+    :class: toggle
 
-    <details>
-       <summary>Boletín UNAM-2015/530</summary>
-       <p>Instrumentan en la UNAM métodos para control de calidad del concreto reforzado con fibras
-       </p>
-   </details>
+    .. raw:: html
+
+        <details>
+           <summary>Boletín UNAM-2015/530</summary>
+           <p>Instrumentan en la UNAM métodos para control de calidad del concreto reforzado con fibras
+           </p>
+       </details>
 
 
 <header>
