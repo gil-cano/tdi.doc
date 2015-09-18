@@ -4,27 +4,24 @@ HTML
 Sintaxis y Semántica de HTML
 ----------------------------
 
-Inicio de página en HTML5
+Inicio de una página en HTML5
 
-.. literalinclude:: example01.html
+.. literalinclude:: app/01-html.html
     :linenos:
     :language: html
     :lines: 1-4
 
-Iniicio de página en HTML 4.01
+Inicio de una página en HTML 4.01
 
-.. code-block:: html
-   :linenos:
+.. literalinclude:: app/01-xhtml.html
+    :linenos:
+    :language: html
+    :lines: 1-6
 
-   <?xml version="1.0" encoding="utf-8"?>
-   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-   <html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
 
 Estructura completa de una página en HTML5
 
-.. literalinclude:: example01.html
+.. literalinclude:: app/01-html.html
     :linenos:
     :language: html
 
@@ -209,13 +206,15 @@ El elemento *<div>* agrupa un conjunto de elementos en bloque.
 ~~~~~~~~
 
 .. code-block:: html
-   :linenos:
+    :linenos:
 
-      <iframe
-        width="450"
-        height="350"
-        src="http://maps.google.co.uk/maps?q=moma+new+york&amp;output=embed">
-      </iframe>
+    <iframe
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15059.709826780037!2d-99.18979089002852!3d19.32895393180137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000f915a888b%3A0xdf8bcb88b73cde0f!2sFacultad+de+Ciencias!5e0!3m2!1sen!2smx!4v1442601448499">
+    </iframe>
 
 
 ..  admonition:: Resultado
@@ -224,9 +223,11 @@ El elemento *<div>* agrupa un conjunto de elementos en bloque.
     .. raw:: html
 
         <iframe
-          width="450"
-          height="350"
-          src="http://maps.google.co.uk/maps?q=moma+new+york&amp;output=embed">
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15059.709826780037!2d-99.18979089002852!3d19.32895393180137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000f915a888b%3A0xdf8bcb88b73cde0f!2sFacultad+de+Ciencias!5e0!3m2!1sen!2smx!4v1442601448499">
         </iframe>
 
 
@@ -239,10 +240,54 @@ El área principal del contenido de un documento incluye contenido que es único
 
 Solo puede haber un elemento *main* por pagína, y no puede ser usado como desendiente de otro elemento semántico.
 
+.. code-block:: html
+   :linenos:
+
+   <body>
+       <main class="main-container">
+           Contenido
+       </main>
+   </body>
+
+<article>
+~~~~~~~~~
+Se usa par agrupar un pedaso de contenido independiente. Entradas de un blog,noticias.
+
+.. code-block:: html
+   :linenos:
+
+    <body>
+        <main class="main-container">
+            <article class="article-container flex-container">
+                Contenido del articulo
+            </article>
+        </main>
+    </body>
+
 
 <section>
 ~~~~~~~~~
 Este elemento se usa para definir una sección generica de un documento.
+
+.. code-block:: html
+   :linenos:
+
+    <body>
+      <main class="main-container" role="main">
+        <article class="article-container flex-container">
+          <section class="main-content">
+            <header>
+              <h1>El elemento <code>&lt;main></code> </h1>
+            </header>
+            <p>Definición:</p>
+            <blockquote>
+              <p>El elemento Main (<code>&lt;main></code>)
+                representa&hellip;</p>
+            </blockquote>
+          </section>
+        </article>
+      </main>
+    </body>
 
 
 <nav>
@@ -250,9 +295,6 @@ Este elemento se usa para definir una sección generica de un documento.
 Se usa para agrupar links de navegación a otras páginas o secciónes de la misma pagína.
 
 
-<article>
-~~~~~~~~~
-Se usa par agrupar un pedaso de contenido independiente. Entradas de un blog,noticias.
 
 
 <aside>
