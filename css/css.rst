@@ -172,6 +172,68 @@ Los posibles valoress son:
         :language: css
         :lines: 7-14
 
+
+Ejemplo
+-------
+
+.. literalinclude:: src/01-css.html
+    :linenos:
+    :language: html
+
+
+.. literalinclude:: src/01-css.html
+    :linenos:
+    :language: html
+    :lines: 9-19
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. literalinclude:: src/css/main02.css
+        :linenos:
+        :language: css
+        :lines: 1-30
+
+
+.. literalinclude:: src/01-css.html
+    :linenos:
+    :language: html
+    :lines: 21-28
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. literalinclude:: src/css/main02.css
+        :linenos:
+        :language: css
+        :lines: 32-66
+
+
+.. literalinclude:: src/01-css.html
+    :linenos:
+    :language: html
+    :lines: 30-47
+
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. literalinclude:: src/css/main02.css
+        :linenos:
+        :language: css
+        :lines: 68-103
+
+..  admonition:: Resultado
+    :class: toggle
+
+    .. literalinclude:: src/css/main02.css
+        :linenos:
+        :language: css
+        :lines: 105-122
+
+
 Media Queries
 -------------
 
