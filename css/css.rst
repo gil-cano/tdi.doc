@@ -327,3 +327,12 @@ Ejemplo 3
 
 
 .. image:: src/images/grid.png
+
+
+:download:`grid-px.css <src/css/grid-px-sol.css>`
+
+
+Referencias
+-----------
+
+`Responsive Web Design <http://alistapart.com/article/responsive-web-design>`_
