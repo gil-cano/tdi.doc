@@ -1,0 +1,16 @@
+@viewport {
+  width: device-width;
+}
+
+
+@media print {
+    header,
+    footer,
+    nav {
+        display: none;
+    }
+    section {
+        font-size: 3em;
+        color: blue;
+    }
+}

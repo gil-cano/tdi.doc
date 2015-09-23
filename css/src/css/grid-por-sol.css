@@ -1,0 +1,12 @@
+@viewport {
+  width: device-width;
+}
+
+
+@media print {
+    header,
+    footer,
+    nav {
+        display: none;
+    }
+}

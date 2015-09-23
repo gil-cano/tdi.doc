@@ -164,7 +164,7 @@ Los posibles valoress son:
 
  | Contacto | Mapa del sitio | Directorio | Correo | Ingresar |
 
-..  admonition:: Resultado
+..  admonition:: CSS
     :class: toggle
 
     .. literalinclude:: src/display.html
@@ -187,7 +187,7 @@ Ejemplo
     :lines: 9-19
 
 
-..  admonition:: Resultado
+..  admonition:: CSS <header>
     :class: toggle
 
     .. literalinclude:: src/css/main02.css
@@ -202,7 +202,7 @@ Ejemplo
     :lines: 21-28
 
 
-..  admonition:: Resultado
+..  admonition:: CSS <nav>
     :class: toggle
 
     .. literalinclude:: src/css/main02.css
@@ -217,7 +217,7 @@ Ejemplo
     :lines: 30-47
 
 
-..  admonition:: Resultado
+..  admonition:: CSS <main> <article> <section>
     :class: toggle
 
     .. literalinclude:: src/css/main02.css
@@ -225,7 +225,7 @@ Ejemplo
         :language: css
         :lines: 68-103
 
-..  admonition:: Resultado
+..  admonition:: CSS <aside>
     :class: toggle
 
     .. literalinclude:: src/css/main02.css
@@ -237,5 +237,93 @@ Ejemplo
 Media Queries
 -------------
 
-Herramientas de desarrollo
---------------------------
+Los *media queries* nos permiten preguntarle al navegador si ciertas expresiones son verdaderas.
+Si se cumplen podemos aplicar un bloque de estilos y modificar la manera de desplegar los elementos.
+
+La forma general de un *media query* es:
+
+.. code-block:: css
+
+    @media [not|only] type [and] (expr) {
+        rules
+    }
+
+* Media types: especifican el tipo de dispositivo en que será aplicado (all, screen, print)
+* Media expressions: evalua una propiedad y regresa Falso o Verdadero
+* Logical keywords: operadores logicos (and, or, not, only) que permiten crear expresiones mas complejas
+* Rules: estilos basicos que ajustan los elementos
+
+
+Ejemplo 1 (Media Type)
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: src/grid.html
+    :linenos:
+    :language: html
+
+
+..  admonition:: CSS print
+    :class: toggle
+
+    .. literalinclude:: src/css/grid-print.css
+        :linenos:
+        :language: css
+        :lines: 6-16
+
+
+Un ejemplo de una *media expression" seria determinar si el ancho es mayor a 320px
+
+
+.. code-block:: css
+
+    @media screen and (min-width: 320px) {
+    }
+
+Ejemplo 2 (media expression)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: src/responsive.html
+    :linenos:
+    :language: html
+
+
+..  admonition:: mobil-first.css
+    :class: toggle
+
+    .. literalinclude:: src/css/mobil-first.css
+        :linenos:
+        :language: css
+
+
+..  admonition:: desktop-first
+    :class: toggle
+
+    .. literalinclude:: src/css/desktop-first.css
+        :linenos:
+        :language: css
+
+
+Viewports
+~~~~~~~~~
+
+.. code-block:: css
+
+    <meta name=”viewport” content=”width=device-width” />
+
+
+.. code-block:: css
+
+    @viewport {
+      width: device-width;
+    }
+
+
+Ejemplo 3
+~~~~~~~~~
+
+.. literalinclude:: src/grid.html
+    :linenos:
+    :language: html
+
+
+.. image:: src/images/grid.png
