@@ -1,0 +1,11 @@
+header {
+    width: 50%;
+    background: red;
+}
+
+@media (min-width: 640px) {
+    header {
+        width: 100%;
+        background: blue;
+    }
+}

@@ -1,0 +1,11 @@
+header {
+    width: 100%;
+    background: purple;
+}
+
+@media (max-width: 640px) {
+    header {
+        width: 50%;
+        background: yellow;
+    }
+}
