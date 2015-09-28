@@ -20,7 +20,7 @@ lib
 
 .DS_Store
 *.sqlite3
-*..sublime-project
+*.sublime-project
 *.sublime-workspace
 
 var
