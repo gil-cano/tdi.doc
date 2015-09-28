@@ -20,6 +20,8 @@ lib
 
 .DS_Store
 *.sqlite3
+*..sublime-project
+*.sublime-workspace
 
 var
 sphinx-build.log
