@@ -16,6 +16,7 @@ Tecnologías de desarrollo
    html/HTML5
    css/css
    javascript
+   django/intro
 
 
 Principios de diseño

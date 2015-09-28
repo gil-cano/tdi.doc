@@ -19,6 +19,7 @@ include/
 lib
 
 .DS_Store
+*.sqlite3
 
 var
 sphinx-build.log
