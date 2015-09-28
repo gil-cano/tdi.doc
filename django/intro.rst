@@ -47,6 +47,8 @@ Iniciando un proyecto
     |   |-- wsgi.py
     `-- manage.py
 
+manage.py
+~~~~~~~~~
 
 .. code-block:: bash
 
@@ -67,6 +69,9 @@ En el navegador ir a `<http://localhost:8000>`_
 
 .. image:: images/django-admin.png
 
+Bases de Datos
+~~~~~~~~~~~~~~
+
 Una migración sirve para mover la base de datos de un diseño a otro.
 
 .. code-block:: bash
@@ -80,6 +85,8 @@ Una migración sirve para mover la base de datos de un diseño a otro.
       ...
 
 Django usa por default como base de datos `sqlite <https://www.sqlite.org>`_
+
+La configuración se encuentra en pycon2020_site/pycon2020_site/settings.py
 
 .. code-block:: bash
 
@@ -112,6 +119,17 @@ En el navegador ir a `<http://localhost:8000>`_
 
 Apps
 ----
+En Django un proyecto representa un sitioweb completo.
+
+* configuración global
+* inclusion de funcionalidad adicional
+* lista principal de URLs
+
+Una **app** de Django encapsula una unidad de duncionalidad
+
+* Una sección de Blog
+* Un Foro de discusión
+* Un sistema de etiquetas
 
 Creamos una app que incluiremos en el proyecto.
 
@@ -132,7 +150,7 @@ Creamos una app que incluiremos en el proyecto.
     `-- views.py
 
 
-para incluirla en pycon2020_site/pycon2020_site/settings.py
+Para extender el proyecto con la **app** modificamos el archivo pycon2020_site/pycon2020_site/settings.py
 
 .. literalinclude:: src/pycon2020_site/pycon2020_site/settings.py
     :language: python
@@ -168,8 +186,8 @@ Realizamos la migración
       Applying talks.0001_initial... OK
 
 
-Crear objetos
-~~~~~~~~~~~~~
+Interacción con Django
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
