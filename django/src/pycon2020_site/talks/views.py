@@ -1,0 +1,10 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Talk
+
+
+# Create your views here.
+def talk_list(request):
+    talks = Talk.objects.all()
+    output = ', '.join([str(talk) for talk in talks])
+    return HttpResponse(output)
