@@ -93,3 +93,6 @@ Django usa por default como base de datos `sqlite <https://www.sqlite.org>`_
     `-- manage.py
 
 
+.. literalinclude:: src/pycon2020_site/pycon2020_site/views.py
+    :linenos:
+    :language: python
