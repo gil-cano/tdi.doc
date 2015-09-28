@@ -92,7 +92,27 @@ Django usa por default como base de datos `sqlite <https://www.sqlite.org>`_
     |   |-- wsgi.py
     `-- manage.py
 
+Crea el archivo pycon2020_site/pycon2020_site/views.py y agregamos una vista
 
 .. literalinclude:: src/pycon2020_site/pycon2020_site/views.py
     :linenos:
     :language: python
+
+Creamos una URL que respondera con la vista anterior
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/urls.py
+    :language: python
+    :lines: 18-20, 22-23
+
+Creamos una app que incluiremos en el proyecto.
+
+.. code-block:: bash
+
+    $ python manage.py startapp talks
+
+
+para incluirla en pycon2020_site/pycon2020_site/settings.py
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/settings.py
+    :language: python
+    :lines: 33-40, 90-92
