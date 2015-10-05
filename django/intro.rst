@@ -114,7 +114,7 @@ Creamos una URL que respondera con la vista anterior
 
 .. literalinclude:: src/pycon2020_site/pycon2020_site/urls.py
     :language: python
-    :lines: 18-20, 22-23
+    :lines: 19-21, 23-24
 
 En el navegador ir a `<http://localhost:8000>`_
 
@@ -323,7 +323,7 @@ Update urls.py en la aplicación
 
 
 Templates en el proyecto
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Creamos un directorio *templates* al mismo nivel que el proyecto y la aplicación
 
@@ -355,13 +355,14 @@ modificmos las vistas en el proyecto (si es necesario ajustamos la url)
 
 
 layouts
-~~~~~~~
+-------
 
 Creamos un archivo layout.html dentro del directorio templates.
 En los templates definimos bloques que pueden ser sobreescritos.
 
 .. literalinclude:: src/pycon2020_site/templates/layout.html
     :language: html
+    :lines: 3-7, 9-14
 
 
 Modificamos el template home.html para que extienda el template layout.html
@@ -376,3 +377,30 @@ Sobre escribimos los bloques del template que extendimos
 
 .. literalinclude:: src/pycon2020_site/templates/home.html
     :language: html
+
+Archivos estaticos
+------------------
+
+Agregamos una nueva variable en settings.py
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/settings.py
+    :language: python
+    :lines: 104-106
+
+Creamos el directorio assets
+
+. code-block:: bash
+
+    $ mkdir -p assets/css
+
+Dentro de este directorio pueden ir archivos estaticos que servira Nginx. Mientras estemos desarrolando le indicaremos a django que sirva nuestros archivos estaticos.
+En urls.py
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/urls.py
+    :language: python
+    :lines: 18, 26-28
+
+
+.. literalinclude:: src/pycon2020_site/templates/layout.html
+    :language: html
+    :lines: 1-9
