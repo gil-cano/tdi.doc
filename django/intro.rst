@@ -322,8 +322,8 @@ Update urls.py en la aplicación
     :language: python
 
 
-Como aplicar nuetros templates a las aplicaciones?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Templates en el proyecto
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Creamos un directorio *templates* al mismo nivel que el proyecto y la aplicación
 
@@ -341,8 +341,8 @@ Agregamos este directorio en la sección de templates en pycon2020_site/settings
 creamos el archivo templates/home.html
 
 .. literalinclude:: src/pycon2020_site/templates/home.html
-    :language: python
-    :lines: 3
+    :language: html
+    :lines: 6
 
 
 modificmos las vistas en el proyecto (si es necesario ajustamos la url)
@@ -352,3 +352,27 @@ modificmos las vistas en el proyecto (si es necesario ajustamos la url)
     :linenos:
     :language: python
     :lines: 2, 7-11
+
+
+layouts
+~~~~~~~
+
+Creamos un archivo layout.html dentro del directorio templates.
+En los templates definimos bloques que pueden ser sobreescritos.
+
+.. literalinclude:: src/pycon2020_site/templates/layout.html
+    :language: html
+
+
+Modificamos el template home.html para que extienda el template layout.html
+
+.. literalinclude:: src/pycon2020_site/templates/home.html
+    :language: html
+    :lines: 1
+
+Veamos `<http://localhost:8000>`_
+
+Sobre escribimos los bloques del template que extendimos
+
+.. literalinclude:: src/pycon2020_site/templates/home.html
+    :language: html
