@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.talk_list)
+    url(r'^$', views.talk_template_list)
 ]

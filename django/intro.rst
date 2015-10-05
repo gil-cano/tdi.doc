@@ -259,6 +259,7 @@ En talks/views.py
 
 .. literalinclude:: src/pycon2020_site/talks/views.py
     :language: python
+    :lines: 1-10
 
 Agregamos talks/urls.py
 
@@ -290,4 +291,40 @@ Modificamos talks/admin.py
 
 .. literalinclude:: src/pycon2020_site/talks/admin.py
     :language: python
+
+Views
+-----
+
+Creamos un directorio templates dentro de la aplicción. Dentro de este un directorio con el nombre de la applciación.
+
+.. code-block:: bash
+
+    $ mkdir -p talks/templates/talks
+
+Creamos el archivo talk_list.html
+
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/talk_list.html
+    :language: html
+
+Agregamos una nueva vista en la aplicación.
+
+.. literalinclude:: src/pycon2020_site/talks/views.py
+    :language: python
+    :lines: 13-15
+
+Update urls.py en la aplicación
+
+.. literalinclude:: src/pycon2020_site/talks/urls.py
+    :language: python
+
+
+Como aplicar nuetros templates a las aplicaciones?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creamos un directorio *templates* al mismo nivel que el proyecto y la aplicación
+
+.. code-block:: bash
+
+    $ mkdir templates
 

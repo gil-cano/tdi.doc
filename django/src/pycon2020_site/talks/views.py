@@ -8,3 +8,8 @@ def talk_list(request):
     talks = Talk.objects.all()
     output = ', '.join([str(talk) for talk in talks])
     return HttpResponse(output)
+
+
+def talk_template_list(request):
+    talks = Talk.objects.all()
+    return render(request, 'talks/talk_list.html', {'talks': talks})
