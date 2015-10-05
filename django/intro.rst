@@ -266,7 +266,7 @@ Agregamos talks/urls.py
 
 .. literalinclude:: src/pycon2020_site/talks/urls.py
     :language: python
-
+    :lines: 1-6, 8
 
 Agregamos en  pycon2020_site/urls.py
 
@@ -404,3 +404,20 @@ En urls.py
 .. literalinclude:: src/pycon2020_site/templates/layout.html
     :language: html
     :lines: 1-9
+
+Views
+-----
+
+Agregamos una vista para las platicas
+
+.. literalinclude:: src/pycon2020_site/talks/views.py
+    :language: python
+    :lines: 17-21
+
+.. literalinclude:: src/pycon2020_site/talks/urls.py
+    :language: python
+    :lines: 7
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/talk_details.html
+    :language: html
+
