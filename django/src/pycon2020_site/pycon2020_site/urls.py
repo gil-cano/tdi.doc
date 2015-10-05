@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     url(r'^talks/', include('talks.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.hello_world),
+    url(r'^$', views.hello_world_template),
 ]

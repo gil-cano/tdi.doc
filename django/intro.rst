@@ -108,6 +108,7 @@ Crea el archivo pycon2020_site/pycon2020_site/views.py y agregamos una vista
 .. literalinclude:: src/pycon2020_site/pycon2020_site/views.py
     :linenos:
     :language: python
+    :lines: 1, 3-7
 
 Creamos una URL que respondera con la vista anterior
 
@@ -305,11 +306,13 @@ Creamos el archivo talk_list.html
 
 
 .. literalinclude:: src/pycon2020_site/talks/templates/talks/talk_list.html
+    :linenos:
     :language: html
 
 Agregamos una nueva vista en la aplicación.
 
 .. literalinclude:: src/pycon2020_site/talks/views.py
+    :linenos:
     :language: python
     :lines: 13-15
 
@@ -328,3 +331,24 @@ Creamos un directorio *templates* al mismo nivel que el proyecto y la aplicació
 
     $ mkdir templates
 
+Agregamos este directorio en la sección de templates en pycon2020_site/settings.py
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/settings.py
+    :linenos:
+    :language: python
+    :lines: 56-70
+
+creamos el archivo templates/home.html
+
+.. literalinclude:: src/pycon2020_site/templates/home.html
+    :language: python
+    :lines: 3
+
+
+modificmos las vistas en el proyecto (si es necesario ajustamos la url)
+
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/views.py
+    :linenos:
+    :language: python
+    :lines: 2, 7-11
