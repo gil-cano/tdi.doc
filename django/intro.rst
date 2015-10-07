@@ -167,7 +167,7 @@ Cada modelo es una tabla y cada atributo de la clase es una columna en la tabla.
 
 .. literalinclude:: src/pycon2020_site/talks/models.py
     :language: python
-    :lines: 1-9
+    :lines: 1, 11-17
 
 Tenemos un nuevo modelo, necesitamos una migración.
 
@@ -242,7 +242,7 @@ modificamos talks/models.py
 
 .. literalinclude:: src/pycon2020_site/talks/models.py
     :language: python
-    :lines: 11-12
+    :lines: 20-21
 
 
 .. code-block:: bash
@@ -260,7 +260,7 @@ En talks/views.py
 
 .. literalinclude:: src/pycon2020_site/talks/views.py
     :language: python
-    :lines: 1-10
+    :lines: 1-3, 5-11
 
 Agregamos talks/urls.py
 
@@ -292,6 +292,7 @@ Modificamos talks/admin.py
 
 .. literalinclude:: src/pycon2020_site/talks/admin.py
     :language: python
+    :lines: 1-2, 15-16
 
 Views
 -----
@@ -314,7 +315,7 @@ Agregamos una nueva vista en la aplicación.
 .. literalinclude:: src/pycon2020_site/talks/views.py
     :linenos:
     :language: python
-    :lines: 13-15
+    :lines: 14-16
 
 Update urls.py en la aplicación
 
@@ -389,7 +390,7 @@ Agregamos una nueva variable en settings.py
 
 Creamos el directorio assets
 
-. code-block:: bash
+.. code-block:: bash
 
     $ mkdir -p assets/css
 
@@ -412,7 +413,7 @@ Agregamos una vista para las platicas
 
 .. literalinclude:: src/pycon2020_site/talks/views.py
     :language: python
-    :lines: 17-21
+    :lines: 19-21
 
 .. literalinclude:: src/pycon2020_site/talks/urls.py
     :language: python
@@ -421,3 +422,56 @@ Agregamos una vista para las platicas
 .. literalinclude:: src/pycon2020_site/talks/templates/talks/talk_details.html
     :language: html
 
+
+Track Model
+-----------
+
+modificamos talks/models.py
+
+.. literalinclude:: src/pycon2020_site/talks/models.py
+    :linenos:
+    :language: python
+    :lines: 4-22
+
+Hacemos las migraciones
+
+.. code-block:: bash
+
+    $ python manage.py makemigrations talks
+    $ python manage.py migrate talks
+
+Modificamos talks/admin.py
+
+.. literalinclude:: src/pycon2020_site/talks/admin.py
+    :language: python
+    :lines: 3-5, 17
+
+En el navegador ir a `<http://localhost:8000/admin>`_
+
+
+Agregamos una vista en talks/admin.py
+
+.. literalinclude:: src/pycon2020_site/talks/admin.py
+    :language: python
+    :lines: 6-15, 17
+
+
+Agregamos una vista para los tracks:
+
+En talks/views.py
+
+.. literalinclude:: src/pycon2020_site/talks/views.py
+    :language: python
+    :lines: 4, 22-26
+
+Agregasmo la vista html
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/track_details.html
+    :linenos:
+    :language: html
+
+Modificamos la url:
+
+.. literalinclude:: src/pycon2020_site/talks/urls.py
+    :language: python
+    :lines: 8

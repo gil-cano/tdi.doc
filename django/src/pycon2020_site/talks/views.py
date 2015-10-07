@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Talk
+from .models import Track
 
 
 # Create your views here.
@@ -18,3 +19,8 @@ def talk_template_list(request):
 def talk_details(request, pk):
     talk = Talk.objects.get(pk=pk)
     return render(request, 'talks/talk_details.html', {'talk': talk})
+
+
+def track_details(request, pk):
+    track = Track.objects.get(pk=pk)
+    return render(request, 'talks/track_details.html', {'track': track})
