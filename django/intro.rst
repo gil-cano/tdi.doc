@@ -475,3 +475,14 @@ Modificamos la url:
 .. literalinclude:: src/pycon2020_site/talks/urls.py
     :language: python
     :lines: 8
+
+
+404 En talks/views.py
+
+.. code-block:: python
+
+    from django.shortcuts import get_object_or_404
+
+    def track_details(request, pk):
+        track = get_object_or_404(Track, pk=pk)
+        return render(request, 'talks/track_details.html', {'track': track})
