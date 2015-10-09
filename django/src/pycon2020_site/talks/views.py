@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Talk
 from .models import Track
 
@@ -22,5 +23,11 @@ def talk_details(request, pk):
 
 
 def track_details(request, pk):
-    track = Track.objects.get(pk=pk)
+    # track = Track.objects.get(pk=pk)
+    track = get_object_or_404(Track, pk=pk)
     return render(request, 'talks/track_details.html', {'track': track})
+
+
+def track_list(request):
+    tracks = Track.objects.all()
+    return render(request, 'talks/track_list.html', {'tracks': tracks})

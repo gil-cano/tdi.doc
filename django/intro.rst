@@ -309,6 +309,7 @@ Creamos el archivo talk_list.html
 .. literalinclude:: src/pycon2020_site/talks/templates/talks/talk_list.html
     :linenos:
     :language: html
+    :lines: 6-11
 
 Agregamos una nueva vista en la aplicación.
 
@@ -486,3 +487,55 @@ Modificamos la url:
     def track_details(request, pk):
         track = get_object_or_404(Track, pk=pk)
         return render(request, 'talks/track_details.html', {'track': track})
+
+URLs
+----
+
+.. literalinclude:: src/pycon2020_site/templates/layout2.html
+    :language: html
+    :lines: 41-42
+
+Agregamos talks/templates/track_list.html
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/track_list.html
+    :language: html
+    :lines: 1-12, 14-17
+
+
+Cambiamos el nombre en talks/urls.py
+
+.. literalinclude:: src/pycon2020_site/talks/urls.py
+    :language: python
+    :lines: 1-6, 8
+
+
+Modificamos talks/templates/track_list.html
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/track_list.html
+    :language: html
+    :lines: 13
+
+
+Namespaces
+~~~~~~~~~~
+
+.. literalinclude:: src/pycon2020_site/pycon2020_site/urls.py
+    :language: python
+    :lines: 22
+
+.. literalinclude:: src/pycon2020_site/templates/layout2.html
+    :language: html
+    :lines: 43-44
+
+.. literalinclude:: src/pycon2020_site/talks/templates/talks/track_list.html
+    :language: html
+    :lines: 14
+
+Testing
+-------
+
+Editamos talks/tests.py
+
+.. literalinclude:: src/pycon2020_site/talks/tests.py
+    :linenos:
+    :language: python
