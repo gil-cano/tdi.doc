@@ -539,3 +539,52 @@ Editamos talks/tests.py
 .. literalinclude:: src/pycon2020_site/talks/tests.py
     :linenos:
     :language: python
+
+Git
+---
+
+.. code-block:: bash
+
+    $ git init .
+    $ ls
+    assets          manage.py       templates
+    db.sqlite3      pycon2020_site
+    fuctional_test.py   talks
+    $ echo "db.sqlite3" >> .gitignore
+    $ echo "*.pyc" >> .gitignore
+    $ echo "__pycache__" >> .gitignore
+    $ git add .gitignore
+    $ git commit -m "first commit"
+    $ git remote add origin https://github.com/gil-cano/test_pyconf.git
+    $ git push -u origin master
+
+ir a `<https://travis-ci.org/>`_
+
+sync `<https://travis-ci.org/profile/gil-cano>`_
+
+Settings `<https://travis-ci.org/gil-cano/test_pyconf/settings>`_
+
+.. code-block:: bash
+
+    $ pip freeze > requirements.txt
+    $ git add requirements.txt
+    $ git commit -m "add requirements file"
+    $ git push
+
+
+ir a `<https://coveralls.io/>`_
+
+ir a `<https://coveralls.io/repos/>`_
+
+
+.. literalinclude:: src/pycon2020_site/travis.yml
+    :linenos:
+    :language: python
+
+
+.. code-block:: bash
+
+    [report]
+    include =
+        talks/*
+        pycon2020_site/*
