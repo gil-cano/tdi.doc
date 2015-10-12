@@ -10,8 +10,8 @@
             <h2>{{ track.title }}</h2>
             <p>{{ track.place }}</p>
             {# <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> #}
-            <p><a class="btn btn-default" href="{% url 'track' pk=track.pk %}" role="button">View details &raquo;</a></p>
-            {# <p><a class="btn btn-default" href="{% url 'tracks:track' pk=track.pk %}" role="button">View details &raquo;</a></p> #}
+            {# <p><a class="btn btn-default" href="{% url 'track' pk=track.pk %}" role="button">View details &raquo;</a></p> #}
+            <p><a class="btn btn-default" href="{% url 'tracks:details' pk=track.pk %}" role="button">View details &raquo;</a></p>
         </div>
     {% endfor %}
 </div>

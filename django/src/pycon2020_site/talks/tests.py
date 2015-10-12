@@ -7,65 +7,65 @@ from .models import Track
 
 
 class TrackModelTests(TestCase):
+
     def test_track_creation(self):
         track = Track.objects.create(
             title="Lunes",
             place="Salon 5"
         )
-        self.assertIn('Lunes', track.title)
-
-    # def test_tallk_creation(self):
-    #     course = Talk.objects.create(
-    #         title="Martes",
-    #         place="Salon 6"
-    #     )
-    #     now = timezone.now()
-    #     self.assertLess(course.created_at, now)
+        self.assertIn("Lunes", track.title)
+        self.assertIn("Salon 5", track.place)
 
 
-# class StepModelTests(TestCase):
-#     def setUp(self):
-#         self.course = Talk.objects.create(
-#             title="Python Testing",
-#             description="Learn to write tests in Python"
-#         )
+class TalkModelTests(TestCase):
 
-#     def test_step_creation(self):
-#         step = Step.objects.create(
-#             title="Introduction to Doctests",
-#             description="Learn to write tests in your docstrings.",
-#             course=self.course
-#         )
-#         self.assertIn(step, self.course.step_set.all())
+    def setUp(self):
+        self.track = Track.objects.create(
+            title="Martes",
+            place="Salon 5"
+        )
+
+    def test_talk_creation(self):
+        talk = Talk.objects.create(
+            title="Introduction to Doctests",
+            description="Learn to write tests in your docstrings.",
+            track=self.track
+        )
+        now = timezone.now()
+        self.assertLess(talk.created_at, now)
+        self.assertIn(talk, self.track.talk_set.all())
 
 
-# class CourseViewsTests(TestCase):
-#     def setUp(self):
-#         self.course = Course.objects.create(
-#             title="Python Testing",
-#             description="Learn to write tests in Python"
-#         )
-#         self.course2 = Course.objects.create(
-#             title="New Course",
-#             description="A new course"
-#         )
-#         self.step = Step.objects.create(
-#             title="Introduction to Doctests",
-#             description="Learn to write tests in your docstrings.",
-#             course=self.course
-#         )
+class CourseViewsTests(TestCase):
 
-#     def test_course_list_view(self):
-#         resp = self.client.get(reverse('courses:list'))
-#         self.assertEqual(resp.status_code, 200)
-#         self.assertIn(self.course, resp.context['courses'])
-#         self.assertIn(self.course2, resp.context['courses'])
+    def setUp(self):
+        self.track = Track.objects.create(
+            title="Lunes",
+            place="Salon 1"
+        )
+        self.track2 = Track.objects.create(
+            title="Martes",
+            place="Salon 2"
+        )
+        self.talk = Talk.objects.create(
+            title="Introduction to Doctests",
+            description="Learn to write tests in your docstrings.",
+            track=self.track
+        )
 
-#     def test_course_detail_view(self):
-#         resp = self.client.get(reverse('courses:detail',
-#                                        kwargs={'pk': self.course.pk}))
-#         self.assertEqual(resp.status_code, 200)
-#         self.assertEqual(self.course, resp.context['course'])
+    def test_track_list_view(self):
+        resp = self.client.get(reverse('tracks:list'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.track, resp.context['tracks'])
+        self.assertIn(self.track2, resp.context['tracks'])
+        self.assertTemplateUsed(resp, 'talks/track_list.html')
+        self.assertContains(resp, self.track.title)
+
+    def test_track_detail_view(self):
+        resp = self.client.get(
+            reverse('tracks:details', kwargs={'pk': self.track.pk}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(self.track, resp.context['track'])
 
 #     def test_step_detail(self):
 #         resp = self.client.get(reverse('courses:step', kwargs={

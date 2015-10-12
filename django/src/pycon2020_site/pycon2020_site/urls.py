@@ -19,8 +19,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 urlpatterns = [
-    # url(r'^talks/', include('talks.urls', namespace='tracks')),
-    url(r'^talks/', include('talks.urls')),
+    url(r'^talks/', include('talks.urls', namespace='tracks')),
+    # url(r'^talks/', include('talks.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.hello_world_template),
 ]
