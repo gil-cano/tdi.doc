@@ -14,7 +14,7 @@ Quick start
 
     $ git clone https://github.com/gil-cano/tdi.doc.git
     $ cd tdi.doc
-    $ virtualenv-2.7 .
+    $ virtualenv-3.5 .
     $ source bin/activate
     (tdi.doc)$ pip install -r requirements.txt
     (tdi.doc)$ make html
