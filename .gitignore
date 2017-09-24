@@ -26,3 +26,4 @@ lib
 var
 sphinx-build.log
 sphinx-latex.log
+pip-selfcheck.json
